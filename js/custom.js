@@ -1,6 +1,6 @@
 // Creating map object
 var myMap = L.map("map", {
-    center: [34.0522, -118.2437],
+    center: [ 0.671647859580566,35.945798679941127],
     zoom: 8
 });
 
@@ -13,4 +13,69 @@ var layer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}'
     minZoom: 0
 });
 
+var circleMarker = L.circleMarker([0,0],{
+    radius:18,
+    fillColor: '#F5F4F4',
+    fillOpacity: 0.7,
+    color:'#F5F4F4',
+    weight:0.9
+}).addTo(myMap);
+
+function highLightLayer(e){
+    var layer = e.target;
+
+    circleMarker.setLatLng(layer.getLatLng());
+
+    // update the side section
+    updateSection(layer.feature.properties);
+}
+
+var customLayerMarker = L.geoJson(null, {
+    style:function(feature){
+        return {
+            fillColor: '#fff',
+            fillOpacity: 0.95,
+        };
+       
+    },
+    onEachFeature:function(feature, layer){
+        layer.on('click', highLightLayer)
+    }
+}).addTo(myMap);
+
 layer.addTo(myMap);
+
+var dataUrl = 'data/proportionalSymbol.geojson';
+
+fetch(dataUrl)
+ .then(response => {
+    return response.json();
+ })
+ .then(data=>{
+     customLayerMarker.addData(data);
+
+     
+ });
+
+var title = document.getElementById('title-text');
+var description = document.getElementById('description');
+var detailTitle = document.getElementById('detail-title');
+
+function updateSection(properties){
+   
+    title.innerHTML = properties.County +" County, Kenya";
+    detailTitle.innerHTML = properties.County + " County, Kenya";
+
+    // Description of the title 
+    
+
+    // display the section
+
+
+
+}
+
+var descriptionTab = document.getElementById('')
+function toggleDescriptionTab(){
+
+}
