@@ -14,7 +14,7 @@ var layer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}'
 });
 
 var circleMarker = L.circleMarker([0,0],{
-    radius:18,
+    radius:20,
     fillColor: '#F5F4F4',
     fillOpacity: 0.7,
     color:'#F5F4F4',
@@ -40,6 +40,16 @@ var customLayerMarker = L.geoJson(null, {
     },
     onEachFeature:function(feature, layer){
         layer.on('click', highLightLayer)
+    },
+    pointToLayer:function(goeObj, latlng){
+        return L.marker(latlng,{
+            icon:new L.Icon({
+                iconUrl:'../images/pin.png',
+                iconSize: [35, 35],
+                iconAnchor: [17, 17],
+                popupAnchor: [-3, -76],
+            })
+        });
     }
 }).addTo(myMap);
 

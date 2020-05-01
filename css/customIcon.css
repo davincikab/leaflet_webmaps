@@ -86,3 +86,10 @@ span{
     width:45px;
     height: 45px;
 }
+
+
+/* leaflet custom  */
+.leaflet-bar a{
+    background-color: #7816e9de !important;
+    color: #fff !important;
+}
