@@ -85,6 +85,7 @@ function updateSection(properties){
 
 }
 
+// toggle the descripton tab
 var descriptionTab = document.getElementById('')
 function toggleDescriptionTab(){
 

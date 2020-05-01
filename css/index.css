@@ -4,7 +4,7 @@
  }
 
  #map{
-    height:100vh;
+    height:98vh;
     width:100%;
 }
 
@@ -37,4 +37,28 @@ h5{
     margin:3px;
     /* color: aliceblue; */
     text-align: center;
+}
+
+/* Navigation bar */
+nav{
+    background: #e6b33270;
+    padding:4px 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul li{
+    list-style: none;
+    list-style-type: none;
+    display: inline;
+}
+
+li a{
+    color:#fff;
+    text-decoration: none;
+    margin-left: 0.6em;
+}
+
+li a:hover{
+    transform: scale(1.2);
 }
