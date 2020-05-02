@@ -1,3 +1,7 @@
+var content = document.getElementById('content');
+var search = document.getElementById('search-control');
+var searcActive = false;
+
 // Creating map object
 var myMap = L.map("map", {
     center: [ 0.671647859580566,35.945798679941127],
@@ -28,6 +32,13 @@ function highLightLayer(e){
 
     // update the side section
     updateSection(layer.feature.properties);
+
+    if(content.classList.contains('expand')){
+
+    }else{
+        toggleDescriptionTab(content);
+    }
+    
 }
 
 var customLayerMarker = L.geoJson(null, {
@@ -55,6 +66,7 @@ var customLayerMarker = L.geoJson(null, {
 
 layer.addTo(myMap);
 
+// fetch the data layer
 var dataUrl = 'data/proportionalSymbol.geojson';
 
 fetch(dataUrl)
@@ -64,9 +76,12 @@ fetch(dataUrl)
  .then(data=>{
      customLayerMarker.addData(data);
 
-     
+     console.log(data);
+    // populate the data do the list
+     createList(data.features);
  });
 
+//  Update the description
 var title = document.getElementById('title-text');
 var description = document.getElementById('description');
 var detailTitle = document.getElementById('detail-title');
@@ -85,8 +100,98 @@ function updateSection(properties){
 
 }
 
-// toggle the descripton tab
-var descriptionTab = document.getElementById('')
-function toggleDescriptionTab(){
+// Create a list of counties
+var countyList = document.getElementById('list');
+function createList(data){
+    let counties = [];
+    for (const county of data) {
+        let el = `<li class="list-item" data-id="${county.properties.County}"><img src='images/pin.png'>${county.properties.County}</li>`;
+        counties.push(el);
+    }
 
+    countyList.innerHTML += counties;
+
+    listEventLister();
 }
+
+// List Event Listener
+function listEventLister() {
+    // List click handler
+    var listItems = document.getElementsByClassName('list-item');
+    
+    for (const item of listItems) {
+
+        item.addEventListener('click', function (e) {
+            zoomToFeature(this.getAttribute('data-id'));
+        });
+
+    }
+}
+
+// collapse and expand the list
+var expandButton = document.getElementById('toggle-list');
+expandButton.addEventListener('click', expandList);
+
+function expandList(e){
+    this.classList.toggle('expand-toggle-list');
+    countyList.classList.toggle('list-expand');
+}
+
+// Zoom To feature
+function zoomToFeature(county){
+    customLayerMarker.eachLayer(function(layer){
+
+        if(layer.feature.properties.County == county){
+            circleMarker.setLatLng(layer.getLatLng());
+            updateSection(layer.feature.properties);
+
+            toggleDescriptionTab(content);
+        }
+
+    });
+}
+
+// Add eventlistener
+var backButtons = document.getElementsByClassName('arrow');
+for(const backButton of backButtons){
+    backButton.addEventListener('click', function (e) {
+        let element = document.getElementById(this.getAttribute('data-parent'));
+        toggleDescriptionTab(element);
+    });
+}
+
+
+// toggle the descripton tab
+function toggleDescriptionTab(element){   
+    element.classList.toggle('expand');
+
+    if (searcActive) {
+        search.classList.toggle('expand');
+        searcActive = false;
+    }
+    searcActive = element == search ? true : false;
+}
+
+// Search bar
+var searchButton = document.getElementById('search-button');
+
+searchButton.addEventListener('click', function (e) {
+    toggleDescriptionTab(search);
+
+});
+
+// menu Section
+var menuButton = document.getElementById('menu');
+var navbar = document.getElementById('navbar');
+
+menuButton.addEventListener('click', function(e){
+    navbar.classList.toggle('navbar-expand');
+});
+
+// Close menu
+var closeMenu = document.getElementById('close-menu');
+closeMenu.addEventListener('click', function(e){
+    navbar.classList.toggle('navbar-expand');
+});
+
+// Search

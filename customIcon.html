@@ -8,40 +8,145 @@
     <link rel="stylesheet" href="css/customIcon.css">
     <link rel="stylesheet" href="leaflet/leaflet.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
-        <div class="content">
-            <div class="image-section">
-                <img src="images/bears.jpg" alt="">
-            </div>
-
-            <div class="title">
-                <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-                <i class="arrow"></i>
-                <h4 class="title-text" id="title-text">Nakuru County</h4>
-                <a href="" id="direction">
-                    <!-- Icon -->
-                    <p class="direction"></p>
-                </a>
-            </div>
-
-            <div class="details">
-                <div class="header">name</p>
-                <p class="bold" id="detail-title">Nyeri Hospital</div>
-
-                <div class="header">description</div>
-                <p class="bold" id="description"> 
-                    Allendale East Area School. Artist Fin DAC. Photo by Saskia Visser. Can be viewed from Stewarts Road.
-                </p>
-            </div>
+        <div class="side-panel">
             
+            <div class="side-menu" id="side-menu">
+                <div class="title">
+                    <i class="menu" id="menu"></i>
+                    <p class="title-text">Kenya County</p>
+                    <i class="search-button" id="search-button"></i>
+                    <i class="setting" id="setting"></i>
+                </div>
+
+                <!-- Google analytics -->
+                <div class="share">
+                <p>47 of 47 Counties </p>
+            
+                </div>
+
+                <!-- List of feature --->
+
+                <div class="layers">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Kenyan Counties</label>
+                        </p>
+                        <i class="toggle-list" id="toggle-list"> </i>
+                    </div>
+                    
+                    <!--  -->
+                    <ul class="list" id="list">
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Detail Section -->
+            <div class="content" id="content">
+                <div class="image-section">
+                    <img src="images/bears.jpg" alt="">
+                </div>
+
+                <div class="title">
+                    <!-- <i class="fa fa-arrow-left" aria-hidden="true"></i> -->
+                    <i class="arrow" id="content-back" data-parent="content"></i>
+                    <h4 class="title-text" id="title-text">Nakuru County</h4>
+                    <a href="" id="direction">
+                        <!-- Icon -->
+                        <p class="direction"></p>
+                    </a>
+                </div>
+
+                <div class="details">
+                    <div class="header">name</p>
+                    <p class="bold" id="detail-title">Nyeri Hospital</div>
+
+                    <div class="header">description</div>
+                    <p class="bold" id="description"> 
+                        Allendale East Area School. Artist Fin DAC. Photo by Saskia Visser. Can be viewed from Stewarts Road.
+                    </p>
+                </div>
+                
+            </div>
+
+            <!-- Search Control -->
+            <div class="search" id="search-control">
+                <div class="form">
+                    <i class="arrow" id="content-back" data-parent="search-control"></i>
+                    <input type="text" name="query" id="query" class="form-control">
+                </div>
+            
+                <div class="result">
+                    <!-- list of  -->
+                    <ul class="result-list">
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Menu Control -->
+            <div class="navbar" id="navbar">
+                <div class="cool-img">
+
+                    <div class="close-button">
+                        <div class="menu-bar"></div>
+                        <div class="menu-bar"></div>
+                    </div>
+                   <h4 class="">David Ng'ang'a Njeri</h4>
+                </div>
+                <ul class="nav">
+                    <div class="section">
+                        <li class="">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <a href="animate.html">Animate</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="bivariate.html">Bivariate</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="search.html">Search</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="choropleth.html">Choropleth</a>
+                        </li>
+                    </div>
+
+                    <div class="section">
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="animate.html">Animate</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="bivariate.html">Bivariate</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="search.html">Search</a>
+                        </li>
+                        <li class="">
+                            <i class="search-button"></i>
+                            <a href="choropleth.html">Choropleth</a>
+                        </li>
+                    </div>
+                    
+                </ul>
+            </div>
+
         </div>
         <div id="map">
         </div>
     </div>
+
+   
 <!-- 
     <img src="http://localhost:3000/leaflet/images/marker-icon.png"
         class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0"

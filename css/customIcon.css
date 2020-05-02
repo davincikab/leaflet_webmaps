@@ -8,10 +8,127 @@
     background-color: #fff;
  }
 
- .content{
+ .side-panel{
+     width: 30vw;
+     height: 100vh;
+     overflow: hidden;
+ }
+
+ /* Side menu  */
+ .side-menu{
     height: 100vh;
     width: 30vw;
+ }
+
+ .side-menu .title{
+     height: 10vh;
+     margin:0% !important;
+     text-align: center;
+ }
+
+ .side-menu .share{
+    height: 5vh;
+    background-color:#F5F5F5;
+    text-align: center;
+    margin:0% !important;
+ }
+
+ .side-menu .layers{
+     /* text-align: left; */
+     padding:0px 8px;
+ }
+
+.setting{
+    background-image: url('../images/MyMaps_Icons003.png');
+    background-position: -1px -216px;
+    height: 22px;
+    width: 22px;
+}
+
+.menu{
+    background-image: url('../images/MyMaps_Icons003.png');
+    background-position: -1px -238px;
+    height: 22px;
+    width: 22px;
+}
+
+.search-button{
+    background-image: url('../images/MyMaps_Icons003.png');
+    background-position: -24px -238px;
+    height: 22px;
+    width: 22px;
+}
+
+/* Layers */
+ input[type="checkbox"]{
+     border:0.5px solid #7816e9de;
+     height: 15px;
+ }
+
+ input[type="checkbox"]:checked{
+     background-color: #7816e9de;
+     color: #fff;
+ }
+
+ .toggle-list{
+    background-image: url('../images/MyMaps_Icons003.png');
+    background-position: -1px -48px;
+    height: 22px;
+    width: 22px;
+    color: transparent;
+    cursor:pointer;
+ }
+
+ .toggle-list:focus{
+    border:1px solid #7816e9de;
+ }
+
+ .expand-toggle-list{
+    background-image: url('../images/MyMaps_Icons003.png');
+    background-position: -24px -48px;
+    height: 22px;
+    width: 22px;
+    color: transparent;
+ }
+
+ .list{
+    height: 30vh;
+    transition: all .3s ease-in-out;
+    overflow-y: hidden;
+ }
+
+ .list-expand{
+    height: 76vh;
+    overflow-y: scroll;
+ }
+
+ .list img{
+     height: 20px;
+     width: 20px;
+     margin-right: 4px;
+ }
+
+ .list-item:hover{
+    background-color: #7816e9de;
+    color:#fff;
+ }
+
+ ul li{
+    list-style-type: none;
+    list-style: none;
+ }
+
+ /* Description */
+ .content{
+    height: 100vh;
+    width:0;
+    min-height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
     overflow: hidden;
+    z-index:3;
+    transition:0.3s ease-in-out;
  }
 
   #map{
@@ -22,6 +139,7 @@
 .image-section{
     height: 30vh;
     overflow: hidden;
+    transition: 0.2s;
 }
 
 .title{
@@ -31,7 +149,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    transition: 0.2s;
 }
 .title-text{
     margin: 0px !important;
@@ -78,6 +196,8 @@ span{
 
 .details{
     padding:4px  8px;
+    transition: 0.3s;
+     display: block;
 }
 
 .highlight-marker{
@@ -87,9 +207,133 @@ span{
     height: 45px;
 }
 
+/* Search Function */
+.search{
+    height: 100vh;
+    width:0vw;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index:2;
+    overflow:hidden;
+    transition:0.3s ease-in-out;
+    background-blend-mode: darken;
+}
+
+.form{
+    padding:3px 8px;
+    display: flex;
+    background-color: #7816e9de;
+}
+
+.form-control{
+    width: 20vw;
+    border: 1px solid #fff;
+    background-color: transparent;
+    height: 30px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: 12px;
+    font-size: 0.8em;
+}
+
+.form-control:focus{
+    outline: none;
+    color:#fff;
+}
+
+/* Expand or collapse section */
+.expand{
+    width:30vw;
+    margin-left: 0vw;   
+    background-color: #fff;
+ }
+
+
+ /* Navigation bar */
+.navbar{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:0vw;
+    height: 100vh;
+    z-index: 4;
+    overflow: hidden;
+    box-shadow: 2px 2px 0.1em #ddd;
+    text-align:left;
+    transition: .3s;
+}
+
+.navbar-expand{
+    width:25vw;
+    background-color: #fff;
+}
+
+.nav li{
+    font-size: 0.95em;
+    margin-top:8px;
+}
+
+li a{
+    text-decoration: none;
+    margin-left: 1.2em;
+}
+
+.cool-img{
+    background-image: url('../images/maps.jpg');
+    min-height: 25vh;
+    width: 30vw;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.close-button{
+    margin-top: 8px;
+}
+
+.menu-bar{
+    background-color:#fff;
+    width: 2em;
+    height:4px;
+    margin-bottom: 4px;
+}
+
+.menu-bar:first-child{
+    transform: rotate(45deg);
+    /* transform:translateY(12px); */
+}
+
+.menu-bar:last-child{
+    transform: rotate(-45deg);
+}
+
+h4{
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-top: 22vh;
+    margin-bottom: 0px;
+}
+
+.navbar .section{
+    border-bottom:1px solid #ddd;
+    margin-bottom:8px;
+    padding-left: 1.4em;
+}
+
+.nav{
+    margin: 0% !important;
+    padding: 0% !important;
+}
+ /* a class to disable the background*/
 
 /* leaflet custom  */
 .leaflet-bar a{
     background-color: #7816e9de !important;
     color: #fff !important;
+}
+
+.leaflet-control-attribution a {
+    color: #8934EB !important;
 }
