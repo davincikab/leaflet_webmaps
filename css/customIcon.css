@@ -14,6 +14,9 @@
      overflow: hidden;
  }
 
+ label{
+     color: #464646;;
+ }
  /* Side menu  */
  .side-menu{
     height: 100vh;
@@ -31,6 +34,11 @@
     background-color:#F5F5F5;
     text-align: center;
     margin:0% !important;
+    padding-top:9px;
+    color: #464646;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2vw;
  }
 
  .side-menu .layers{
@@ -59,16 +67,87 @@
     width: 22px;
 }
 
+/* Menu option */
+.menu-option{
+    position: absolute;
+    top:3vh;
+    left:26vw;
+    z-index: 1800;
+    display: block;
+    background-color: #fff;
+    padding:12px 0px;
+    text-align: left;
+    display: none;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),
+                 0 3px 14px 2px rgba(0,0,0,0.12), 
+                 0 5px 5px -3px rgba(0,0,0,0.2);
+}
+.menu-option ul{
+    padding: 0px;
+}
+
+.menu-option-item li{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 40px;
+    text-indent: 8px;
+}
+.menu-option-item li span{
+    margin: 0px 8px;
+}
+.menu-option-item li:hover{
+    background-color: #ddd;
+}
 /* Layers */
  input[type="checkbox"]{
-     border:0.5px solid #7816e9de;
-     height: 15px;
+     height: 0px;
+     width: 0px;
+     cursor: pointer;
+     opacity:0;
  }
 
- input[type="checkbox"]:checked{
-     background-color: #7816e9de;
-     color: #fff;
- }
+.checkmark{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #ddd;
+    top: 0;
+    left: 0;
+}
+
+.checkbox-container{
+    margin: 10px 4px;
+    display: block;
+    position: relative;
+    padding-left: 28px;
+}
+
+.checkbox-container input:checked ~ .checkmark{
+  background-color: #8934EB;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
  .toggle-list{
     background-image: url('../images/MyMaps_Icons003.png');
@@ -95,6 +174,7 @@
     height: 30vh;
     transition: all .3s ease-in-out;
     overflow-y: hidden;
+    margin-top: -2px;
  }
 
  .list-expand{
@@ -102,7 +182,12 @@
     overflow-y: scroll;
  }
 
- .list img{
+ .list-item{
+    margin-bottom: 4px;
+    text-align: left;
+ }
+
+ .list-item img{
      height: 20px;
      width: 20px;
      margin-right: 4px;
@@ -116,6 +201,7 @@
  ul li{
     list-style-type: none;
     list-style: none;
+    color:#464646;
  }
 
  /* Description */
@@ -243,6 +329,9 @@ span{
     color:#fff;
 }
 
+.form .arrow{
+    margin-top: 13px;
+}
 /* Expand or collapse section */
 .expand{
     width:30vw;
@@ -279,6 +368,11 @@ span{
 li a{
     text-decoration: none;
     margin-left: 1.2em;
+    color: #464646;
+}
+
+li a:hover{
+    color: #000;
 }
 
 .cool-img{
@@ -346,6 +440,20 @@ h4{
     margin-top: 60px;
 }
 
+/* scrolL bar styles */
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #8934EB;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #8934EB;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #C9C9C9;
+}
+
 /* leaflet custom  */
 .leaflet-bar a{
     background-color: #7816e9de !important;
@@ -355,3 +463,6 @@ h4{
 .leaflet-control-attribution a {
     color: #8934EB !important;
 }
+
+/* MEDIA QUERIES */
+/*  */

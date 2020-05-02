@@ -25,18 +25,20 @@
 
                 <!-- Google analytics -->
                 <div class="share">
-                <p>47 of 47 Counties </p>
-            
+                    47 of 47 Counties
+                    <i class="setting" id="setting"></i>
                 </div>
 
                 <!-- List of feature --->
-
                 <div class="layers">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <p>
-                            <input type="checkbox" name="" id="">
-                            <label for="">Kenyan Counties</label>
-                        </p>
+                        <label class="checkbox-container">Kenyan Counties
+                            <input type="checkbox" name="" id="toggle-layer" checked>
+                            <span class="checkmark"></span>
+                           
+                        </label>
+                       
+
                         <i class="toggle-list" id="toggle-list"> </i>
                     </div>
                     
@@ -79,12 +81,12 @@
             <div class="search" id="search-control">
                 <div class="form">
                     <i class="arrow" id="content-back" data-parent="search-control"></i>
-                    <input type="text" name="query" id="query" class="form-control">
+                    <input type="text" name="query" id="query" class="form-control" value="">
                 </div>
             
                 <div class="result">
                     <!-- list of  -->
-                    <ul class="result-list">
+                    <ul class="result-list" id="result-list">
                     </ul>
                 </div>
             </div>
@@ -147,6 +149,20 @@
                 </div>
             </div>
 
+            <!-- Menu Option -->
+            <div class="menu-option">
+                <ul class="menu-option-item">
+                    <li id="collape">
+                        <span>Collapse Map Legend</span>
+                    </li>
+                    <li id="print">
+                        <span>Print Map</span>
+                    </li>
+                    <li id="download">
+                        <span>Download</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div id="map">
         </div>

@@ -1,6 +1,8 @@
 var content = document.getElementById('content');
 var search = document.getElementById('search-control');
 var searcActive = false;
+var countyData;
+var countyList = document.getElementById('list');
 
 // Creating map object
 var myMap = L.map("map", {
@@ -76,9 +78,10 @@ fetch(dataUrl)
  .then(data=>{
      customLayerMarker.addData(data);
 
-     console.log(data);
+     countyData = data;
+     console.log(countyData);
     // populate the data do the list
-     createList(data.features);
+     createList(data.features, countyList);
  });
 
 //  Update the description
@@ -101,17 +104,24 @@ function updateSection(properties){
 }
 
 // Create a list of counties
-var countyList = document.getElementById('list');
-function createList(data){
-    let counties = [];
-    for (const county of data) {
-        let el = `<li class="list-item" data-id="${county.properties.County}"><img src='images/pin.png'>${county.properties.County}</li>`;
-        counties.push(el);
-    }
+function createList(counties, element){
+   let docFragement = document.createDocumentFragment();
 
-    countyList.innerHTML += counties;
+    // create the list item
+    counties.forEach(function (county) {
+        let listItem = document.createElement('li');
+        listItem.classList.add('list-item');
+        listItem.innerHTML += "<img src='images/pin.png'>" + county.properties.County;
 
+        listItem.setAttribute("data-id", county.properties.County);
+
+        docFragement.appendChild(listItem);
+    });
+
+
+    element.appendChild(docFragement);
     listEventLister();
+
 }
 
 // List Event Listener
@@ -155,6 +165,8 @@ function zoomToFeature(county){
 var backButtons = document.getElementsByClassName('arrow');
 for(const backButton of backButtons){
     backButton.addEventListener('click', function (e) {
+
+        console.log("Parent");
         let element = document.getElementById(this.getAttribute('data-parent'));
         toggleDescriptionTab(element);
     });
@@ -163,9 +175,10 @@ for(const backButton of backButtons){
 
 // toggle the descripton tab
 function toggleDescriptionTab(element){   
+    console.log(element);
     element.classList.toggle('expand');
 
-    if (searcActive) {
+    if (searcActive && element != search) {
         search.classList.toggle('expand');
         searcActive = false;
     }
@@ -195,3 +208,29 @@ closeMenu.addEventListener('click', function(e){
 });
 
 // Search
+var resultList = document.getElementById('result-list');
+var formInput = document.getElementById('query');
+formInput.addEventListener('input', function(e){
+   console.log(e);
+    filterData(countyData.features, e.srcElement.value);
+});
+
+// filter data
+function filterData(data, term){
+    let counties = data.filter(datum => datum.properties.County.includes(term));
+    var docFragement = document.createDocumentFragment();
+
+    // call to function createList
+    createList(counties,resultList);
+}
+
+// 
+var toggleLayer = document.getElementById('toggle-layer');
+toggleLayer.addEventListener('change',function(e){
+    console.log(e);
+    if(!e.srcElement.checked){
+        myMap.removeLayer(customLayerMarker);
+    }else{
+        myMap.addLayer(customLayerMarker);
+    }
+});
