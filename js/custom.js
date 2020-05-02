@@ -44,7 +44,7 @@ var customLayerMarker = L.geoJson(null, {
     pointToLayer:function(goeObj, latlng){
         return L.marker(latlng,{
             icon:new L.Icon({
-                iconUrl:'../images/pin.png',
+                iconUrl:'images/pin.png',
                 iconSize: [35, 35],
                 iconAnchor: [17, 17],
                 popupAnchor: [-3, -76],
