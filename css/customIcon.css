@@ -273,6 +273,7 @@ span{
 .nav li{
     font-size: 0.95em;
     margin-top:8px;
+    margin-bottom: 12px;
 }
 
 li a{
@@ -290,22 +291,22 @@ li a{
 
 .close-button{
     margin-top: 8px;
+    margin-left:21vw;
 }
 
 .menu-bar{
     background-color:#fff;
-    width: 2em;
-    height:4px;
+    width: 1.6em;
+    height:2px;
     margin-bottom: 4px;
 }
 
 .menu-bar:first-child{
-    transform: rotate(45deg);
-    /* transform:translateY(12px); */
+    transform: rotate(45deg) translateX(12%);
 }
 
 .menu-bar:last-child{
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translateX(12%);
 }
 
 h4{
@@ -326,7 +327,24 @@ h4{
     margin: 0% !important;
     padding: 0% !important;
 }
+
  /* a class to disable the background*/
+.user{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:8px;
+    bottom: 0px;
+    left:0px;
+}
+
+.attribution{
+    font-size:14px;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 60px;
+}
 
 /* leaflet custom  */
 .leaflet-bar a{
