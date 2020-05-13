@@ -26,7 +26,7 @@ var colorSchemes = {
 };
 
 // Load in geojson data
-var geoData = "/data/gunDeath.geojson";
+var geoData = "data/gunDeath.geojson";
 
 fetch(geoData)
     .then(response=>{
@@ -161,5 +161,4 @@ class ColorPicker{
     }
 
     // getter and setters
-    
 }
