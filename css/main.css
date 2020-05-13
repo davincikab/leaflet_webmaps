@@ -1,0 +1,18 @@
+ html{
+     --brand-color:#7816e9de;
+     --dark-purple:#5d13b1;
+     --medium-purple:#7315dfde;
+     --dark-grey:#555454;
+     --light-grey:#8d8d8d;
+     --white:#ececec;
+     --text-color:#070505;
+     --ghost-white:#fff;
+
+     font-family: Roboto, sans-serif;
+     box-sizing: border-box;
+ }
+
+ body{
+    margin:0;
+    overflow: hidden;
+ }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaflet</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="leaflet/leaflet.css">
 </head>
@@ -11,7 +12,7 @@
 
     <nav class="nav">
         <ul>
-            <li><a href="proportional.html">Prop Symbol</a></li>
+            <li><a href="proportional.html">Proportional Symbol</a></li>
             <li><a href="animate.html">Animate</a></li>
             <li><a href="choropleth.html">Choropleth</a></li>
             <li><a href="overlays.html">Overlay</a></li>
@@ -20,6 +21,96 @@
         </ul>
     </nav>
     <div id="map">
+    </div>
+
+    <div class="legend-div">
+        <div class="lines">
+            <div style="margin-bottom: 6px;"></div>
+            <div style="margin-bottom: 5px;"></div>
+            <div style="margin-bottom: 5px;"></div>
+            <div style="margin-bottom: 6px;"></div>
+            <div style="margin-bottom: 24px;"></div>
+        </div>
+        <div class="legend-items">
+            <div class="legend-symbol">
+                <div class='legend-overlay' style='height:30px; width:52px; padding-top:12px; padding-bottom: 12px;'></div>
+                <div class='legend-overlay' style='height:45px; width:45px;'></div>
+                <div class='legend-overlay' style='height:38px; width:38px;'></div>
+                <div class='legend-overlay' style='height:31px; width:31px;'> </div>
+                <div class='legend-overlay' style='height:24px; width:24px;'></div>
+            </div>
+            <div class="legend-text">
+                <span style="margin-bottom: 0px;">12</span>
+                <span style="margin-bottom: 0px;">10</span>
+                <span style="margin-bottom: 0px;">8</span>
+                <span style="margin-bottom: 0px;">6</span>
+                <span style="margin-bottom: 24px;">4</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="legend-svg">
+        <p>County GPI</p>
+        <svg clas="" width="120" height="72">
+            <circle cx="40" cy="40" r="30" stroke="white" stroke-width="1" fill="#e6b332c4" />
+            <circle cx="40" cy="45" r="25" stroke="white" stroke-width="1" fill="#e6b332c4" />
+            <circle cx="40" cy="50" r="20" stroke="white" stroke-width="1" fill="#e6b332c4" />
+            <circle cx="40" cy="55" r="15" stroke="white" stroke-width="1" fill="#e6b332c4" />
+            <circle cx="40" cy="59" r="10" stroke="white" stroke-width="1" fill="#e6b332c4" />
+
+
+            <!-- Create lines -->
+            <line x1="34" y1="10" x2="80" y2="10" style="stroke:rgb(255,255, 255);stroke-width:1; stroke-linecap:round" />
+            <line x1="34" y1="20" x2="80" y2="20" style="stroke:rgb(255,255, 255);stroke-width:1; stroke-linecap:round" />
+            <line x1="34" y1="30" x2="80" y2="30" style="stroke:rgb(255,255, 255);stroke-width:1; stroke-linecap:round" />
+            <line x1="34" y1="40" x2="80" y2="40" style="stroke:rgb(255,255, 255);stroke-width:1; stroke-linecap:round" />
+            <line x1="34" y1="50" x2="80" y2="50" style="stroke:rgb(255,255, 255);stroke-width:1; stroke-linecap:round" />
+
+            <!-- create labels -->
+            <text x="82" y="15" fill="#e6b332">1.2</text>
+            <text x="82" y="25" fill="#e6b332">1</text>
+            <text x="82" y="35" fill="#e6b332">0.8</text>
+            <text x="82" y="45" fill="#e6b332">0.6</text>
+            <text x="82" y="55" fill="#e6b332">0.4</text>
+        </svg>
+
+        <!-- Rectangel legend -->
+    </div>
+
+    <div class="legend-choropleth">
+        <!-- #fcde9c, #faa476, #f0746e, #e34f6f, #dc3977, #b9257a, #7c1d6f -->
+        <svg width="220" height="70">
+            <rect width="30" height="20" x="0" y="20" style="fill: #fcde9c;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+            <rect width="30" height="20" x="30" y="20" style="fill:#faa476;stroke-width:3;stroke:rgba(0, 0, 0, 0.007)" />
+            <rect width="30" height="20" x="60" y="20" style="fill: #f0746e;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+            <rect width="30" height="20" x="90" y="20" style="fill: #e34f6f;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+            <rect width="30" height="20" x="120" y="20" style="fill:#dc3977;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+            <rect width="30" height="20" x="150" y="20" style="fill:#b9257a;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+            <rect width="30" height="20" x="180" y="20" style="fill:#7c1d6f;stroke-width:3;stroke:rgba(0, 0, 0, 0)" />
+
+            <!-- Text -->
+            <text x="10"   y="55"  fill="#fff">0.4</text>
+            <text x="40"  y="55"  fill="#fff">0.5</text>
+            <text x="70"  y="55"  fill="#fff">0.6</text>
+            <text x="100"   y="55"  fill="#fff">0.7</text>
+            <text x="130"  y="55"  fill="#fff">0.8</text>
+            <text x="160" y="55"  fill="#fff">0.9</text>
+            <text x="190" y="55"  fill="#fff">1.0</text>
+
+        </svg>
+    </div>
+
+    <div class="sample-path">
+        <svg>
+            <g>
+                <path stroke="#ddd" stroke-opacity="1" stroke-width="0.5" stroke-linecap="round"
+                    stroke-linejoin="round" fill="#7c1d6f" fill-opacity="0.9" fill-rule="evenodd"
+                    d="M502 361L508 363L508 365L514 365L518 373L520 371L520 367L522 367L522 369L524 369L525 366L529 368L536 383L534 385L539 390L538 391L541 396L541 402L545 410L545 418L547 420L551 418L559 434L568 437L569 442L571 442L575 446L582 465L584 465L585 471L587 473L589 485L596 494L595 495L591 495L585 489L583 489L573 475L569 471L564 469L564 467L547 477L542 475L542 469L539 468L535 459L512 434L514 432L515 433L519 431L519 427L524 422L522 422L522 420L519 419L511 419L505 414L500 413L493 407L483 405L483 403L479 399L475 399L472 396L473 393L471 391L471 387L476 380L474 370L481 368L481 372L484 379L493 378L495 376L494 373L488 365L492 361L502 361z">
+                </path>
+            </g>
+   
+        </svg>
     </div>
 
     <script src="js/jquery.min.js"></script>

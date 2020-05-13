@@ -1,11 +1,6 @@
- html, body{
-     margin:0%;
-     padding: 0%;
- }
-
  #map{
-    height:98vh;
-    width:100%;
+    height:90vh;
+    width:100vw;
 }
 
 h5{
@@ -25,23 +20,50 @@ h5{
 
 .legend{
     padding: 5px;
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .legend-info{
     bottom:4%;
     position: relative;
     border-radius: 50%;
-    border:2px solid #e6b33270;
-    background-color:#e6b33270;
-    margin:3px;
-    /* color: aliceblue; */
+    border:2px solid #e6b332c4;
+    background-color:#e6b332c4;
+    margin-bottom:3px;
+    color: var(--text-color);
     text-align: center;
+    font-weight: 400;
 }
 
+.legend-container{
+    display: flex;
+    width:10vw;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.legend-container span{
+    color: var(--white);
+    margin-left: 2px;
+}
+
+.legend h4{
+    font-size: 1.2em;
+    color: var(--white);
+    margin:0;
+}
+
+.legend-info > small{
+     position: relative;
+     align-items: center;
+}
 /* Navigation bar */
 nav{
-    background: #e6b33270;
+    background:  var(--brand-color);
     padding:4px 5px;
     width: 100%;
     overflow: hidden;
@@ -54,11 +76,132 @@ ul li{
 }
 
 li a{
-    color:#fff;
+    color:var(--white);
     text-decoration: none;
     margin-left: 0.6em;
 }
 
-li a:hover{
-    transform: scale(1.2);
+li a{
+    padding:2px 8px;
+    position: relative;
+}
+
+li >a:hover{
+    color:var(--text-color);
+}
+
+li a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+li a:hover:before{
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+
+/* Overlaid  */
+.legend-div{
+    position: absolute;
+    z-index: 800;
+    left: 4%;
+    bottom:12%;
+    background-color: var(--white);
+}
+
+.legend-items{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    background-color: var(--white);
+}
+
+.legend-symbol{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.legend-overlay{
+    position:absolute;
+    bottom: 0;
+    border: 1px solid white;
+    /* mix-blend-mode: screen; */
+    left:auto;
+    background-color: #e6b332c4;
+    border-radius: 50%;
+    color:#e6b332c4;
+   
+}
+
+.legend-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    font-size: 11px;
+    position: absolute;
+    bottom: 12%;
+    z-index: 900;
+    color:var(--white)
+}
+
+.legend-text span{
+    font-size: 0.6em;
+}
+
+.lines{
+    z-index: 900;
+    bottom:0%;
+    position: absolute;
+}
+
+.lines div{
+    height:2px;
+    width: 28px;
+    background-color:var(--brand-color);
+}
+
+
+/* Legend Using SVG */
+.legend-svg{
+    position: absolute;
+    bottom:8%;
+    left: 12%;
+    z-index: 800;
+    padding-top: 0px;
+    background-color: var(--brand-color);
+}
+
+.legend-svg p{
+    margin: 0;
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+}
+
+svg{
+    margin-top: 0px;
+}
+
+svg text{
+    font-size: 12px;
+}
+
+/* Choropleth legend */
+.legend-choropleth{
+    z-index:900;
+    position: absolute;
+    bottom: 12%;
+    left: 40%;
 }

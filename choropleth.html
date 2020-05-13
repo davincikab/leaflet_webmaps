@@ -5,11 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaflet</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/choropleth.css">
     <link rel="stylesheet" href="leaflet/leaflet.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 </head>
 
 <body>
+
+    <!-- Navigation Bar -->
+    <!-- Color scheme picker -->
+    <div class="color-picker" id="color-picker">
+        <h6 class="section-title">Chropleth Options</h6>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Opacity</span>
+            </div>
+            <input type="number" name="" id="opacity-level" min="0.0" max="1.0" step="0.1" value="0.7" class="form-control">
+        </div>
+
+        <div class="input-group input-group-sm mt-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Classes</span>
+            </div>
+            <input type="number" name="" id="num-classes" min="4" max="10" class="form-control">
+        </div>
+       
+        <!--  -->
+        <div class="colors">
+            <h6 class="bg-light mt-2 title">Color Scheme</h6>
+            <div class="color-section" id="scheme1">
+                <p>Scheme One</p>
+            </div>
+
+            <div class="color-section" id="scheme2">
+                <p>Scheme 2</p>
+            </div>
+
+            <div class="color-section" id="scheme3">
+                <p>Scheme 2</p>
+            </div>
+
+            <div class="color-section" id="scheme4">
+                <p>Scheme 4</p>
+            </div>
+
+            <div class="color-section" id="scheme5">
+                <p>Scheme 5</p>
+            </div>
+
+            <div class="color-section" id="scheme6">
+                <p>Scheme 6</p>
+            </div>
+
+            <div class="color-section" id="scheme7">
+                <p>Scheme 7</p>
+            </div>
+        </div>
+        
+    </div>
+
     <div id="map">
     </div>
 
