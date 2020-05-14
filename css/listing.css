@@ -1,0 +1,61 @@
+html{
+    --brand-color:hsl(240, 43%, 49%);
+    --gray-90:hsl(240, 1%, 21%);
+    --text-color:hsl(240,12% 12%);
+    --white:hsl(0, 0%, 87%);
+}
+
+body{
+    margin:0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9em;
+    
+}
+
+#map{
+    height:90vh;
+    width:100%;
+}
+
+/* Boostrap */
+.container-fluid{
+    padding: 0px !important;
+    overflow-x: hidden;
+}
+/* Navigation Bar */
+.navbar .navbar-brand{
+    font-weight: 900;
+    font-size: 1.5em;
+    color: var(--brand-color);
+}
+.navbar .navbar-nav{
+    margin-left:10vw;
+}
+
+.navbar .navbar-nav .nav-link, .navbar .navbar-nav .dropdown-item{
+    color:var(--text-color);
+    font-weight:600;
+}
+.navbar{
+    box-shadow: 0px 2px 0.1em rgb(240, 231, 231);
+}
+
+
+
+/* Zoom Control Custom style */
+.leaflet-touch .leaflet-bar .leaflet-control-zoom-in, .leaflet-touch .leaflet-bar .leaflet-control-zoom-out{
+    width:25px;
+    height: 25px;
+    line-height: 22px;
+    color:var(--white);
+    background-color: var(--brand-color);
+    font-size: 14px;
+}
+
+.leaflet-touch .leaflet-bar{
+    border:0px !important;
+}
+
+.leaflet-touch .leaflet-bar a{
+
+}

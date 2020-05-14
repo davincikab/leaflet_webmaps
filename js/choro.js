@@ -14,7 +14,7 @@ var layer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}'
    minZoom: 0
  });
 
- layer.addTo(myMap);
+layer.addTo(myMap);
 var colorSchemes = {
     scheme1: ['#ecda9a', '#efc47e' , '#f3ad6a' , '#f7945d', '#f97b57', '#f66356', '#ee4d5a'],
     scheme2:['#ffc6c4', '#f4a3a8', '#e38191', '#cc607d', '#ad466c', '#8b3058', '#672044'],
