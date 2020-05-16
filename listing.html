@@ -6,10 +6,13 @@
     <title>Listing</title>
     <link rel="stylesheet" href="css/listing.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="leaflet/leaflet.css">
+
+    <link rel="stylesheet" href="bootstrap-slider/css/bootstrap-slider.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
         <a class="navbar-brand " href="#">LISTING B</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,10 +42,7 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
-            </ul>
-            <ul class="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-            </ul>   
+            </ul>  
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -50,32 +50,300 @@
         </div>
     </nav>
 
-    <div class="row py-2 px-3">
-        <form action="" class="form-inline">
-            <div class="input-group input-group-sm">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">City</span>
-                </div>
-                <input type="text" class="form-control" placeholder="County Name">
-            </div>
-        </form>
-    </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2 pl-3">
                
                 <!-- Filter -->
                 <div class="row">
-
-                </div>
-
-                <div class="row">
-                    <div class="products col-md-6">
-                        <img src="images/gray.jpg" alt="" height="200px" width="100%">
-                        <div class="description">
-                            
+                    <div class="container d-flex justify-content-between">
+                        <h5>FILTER DATA </h5>
+                        <div class="layout">
+                            <button class="btn" id="block">
+                                <i class="fas fa-table    "></i>
+                            </button>
+                            <button class="btn" id="list">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
+                    <div class="container filters">
+                        <div class="button-group">
+                            <a href="" class="btn-outline-blue btn btn-sm">Price</a>
+                            <a href="" class="btn btn-sm btn-outline-blue">Rooms</a>
+                            <a href="" class="btn btn-sm btn-outline-blue">Rating</a>
+                            <a href="" class="btn btn-sm btn-outline-blue">Guest</a>
+                            <a href="" class="btn btn-sm btn-outline-blue">Price</a>
+                            <a href="" class="btn btn-sm btn-outline-blue">Room</a>
+                          
+                            <button class="btn bg-blue btn-sm">Filter</button>
+                        </div>
+
+                        <div class="container prices py-2 mt-2">
+                            <h6>Price</h6>
+                            <span>Budget</span>
+                            <button class="btn btn-sm">##</button>
+                            <span>Affordable</span>
+                            <button class="btn btn-sm">###</button>
+                            <span>Expensive</span>
+                            <button class="btn btn-sm">####</button>
+                            <span>Classy</span>
+                            <button class="btn btn-sm">#####</button>
+
+                            <!-- slider -->
+                            <div class="input-group mt-1">
+                                <div class="mb-1">
+                                    <b id="lower-price" class="mr-3">$ 100</b> 
+                                    <input 
+                                        id="ex2" 
+                                        type="text" 
+                                        class="span2" 
+                                        value="" 
+                                        data-slider-min="50" 
+                                        data-slider-max="1800"
+                                        data-slider-step="5" 
+                                        data-slider-value="[100,380]" /> 
+                                    <b id="high-price" class="ml-3">$ 180</b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container rating-filter mt-2">
+                            <h6>Rating</h6>
+                            
+                            <span class="stars" data-rate="1"><i class="fa fa-star"></i></span>
+                            <span class="stars" data-rate="2"><i class="fa fa-star"></i></span>
+                            <span class="stars" data-rate="3"><i class="fa fa-star"></i></span>
+                            <span class="stars" data-rate="4"><i class="fa fa-star"></i></span>
+                            <span class="stars" data-rate="5"><i class="fa fa-star"></i></span>
+                               
+                        </div>
+
+                        <div class="container room-filter mt-2 py-2">
+                            <h6>Room Filter</h6>
+                            <form action="" class="form-inline">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Room</span>
+                                            </div>
+                                            <input type="number" name="rooms" id="rooms" class="form-control">
+                                        </div>
+                                        
+                                        <div class="input-group input-group-sm mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Bathroom</span>
+                                            </div>
+                                            <input type="number" name="rooms" id="rooms" class="form-control">
+                                        </div>
+                                        
+                                        <div class="input-group input-group-sm mt-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Air Conditioner </span>
+                                            </div>
+                                            <input type="number" name="rooms" id="rooms" class="form-control">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Conditioner </span>
+                                            </div>
+                                            <input type="number" name="rooms" id="rooms" class="form-control">
+                                        </div>
+                                        
+                                        <div class="input-group input-group-sm mt-2 ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Guest </span>
+                                            </div>
+                                            <input type="number" name="rooms" id="rooms" class="form-control">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                
+                            </form>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="row listings">
+                        <div class="col-md-12 products d-flex">
+                            <div class="listing-img">
+                                <img src="images/gray.jpg" alt="" height="100%" width="100%">
+                            </div>
+                          
+                            <div class="description">
+                                <h6 class="ml-2 listing-title">Hamming Spur</h6   >
+
+                                <p class="px-2">
+                                    The first chart we’ll create is the same spreadsheet we made in chapter 8, except with-
+                                    out any of the sorting buttons. 
+                                </p>
+                                <div class="px-2"> 
+                                    Hamming Spur <br>
+                                    Hamming Spur
+                                </div>
+
+                                <div class="d-flex facility px-2">
+                                    <span>
+                                        3 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-shower ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="rating d-flex justify-content-between border-top px-2">
+                                    <p>500 reviews</p>
+                                    <p> 5
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 products d-flex">
+                            <div class="listing-img">
+                                <img src="images/gray.jpg" alt="" height="100%" width="100%">
+                            </div>
+                        
+                            <div class="description">
+                                <h6 class="ml-2 listing-title">Hamming Spur</h6>
+                        
+                                <p class="px-2">
+                                    The first chart we’ll create is the same spreadsheet we made in chapter 8, except with-
+                                    out any of the sorting buttons.
+                                </p>
+                                <div class="px-2">
+                                    132 rue de l'Aigle Bromont<br>
+                                    Hamming Spur
+                                </div>
+                        
+                                <div class="d-flex facility px-2">
+                                    <span>
+                                        3 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-shower ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="rating d-flex justify-content-between border-top px-2">
+                                    <p>500 reviews</p>
+                                    <p> 5
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 products d-flex">
+                            <div class="listing-img">
+                                <img src="images/gray.jpg" alt="" height="100%" width="100%">
+                            </div>
+                        
+                            <div class="description">
+                                <h6 class="ml-2 listing-title">Hamming Spur</h6>
+                        
+                                <p class="px-2">
+                                    The first chart we’ll create is the same spreadsheet we made in chapter 8, except with-
+                                    out any of the sorting buttons.
+                                </p>
+                                <div class="px-2">
+                                    Hamming Spur <br>
+                                    Hamming Spur
+                                </div>
+                        
+                                <div class="d-flex facility px-2">
+                                    <span>
+                                        3 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-shower ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="rating d-flex justify-content-between border-top px-2">
+                                    <p>500 reviews</p>
+                                    <p> 5
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 products d-flex">
+                            <div class="listing-img">
+                                <img src="images/gray.jpg" alt="" height="100%" width="100%">
+                            </div>
+                        
+                            <div class="description">
+                                <h6 class="ml-2 listing-title">Hamming Spur</h6>
+                        
+                                <p class="px-2">
+                                    The first chart we’ll create is the same spreadsheet we made in chapter 8, except with-
+                                    out any of the sorting buttons.
+                                </p>
+                                <div class="px-2">
+                                    Hamming Spur <br>
+                                    Hamming Spur
+                                </div>
+                        
+                                <div class="d-flex facility px-2">
+                                    <span>
+                                        3 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-shower ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
+                                        2 <i class="fa fa-bed ml-2" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="rating d-flex justify-content-between border-top px-2">
+                                    <p>500 reviews</p>
+                                    <p> 5
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                   
                 </div>
             </div>
             <div class="col-md-6">
@@ -87,6 +355,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="leaflet/leaflet.js"></script>
+    <script src="bootstrap-slider/bootstrap-slider.js"></script>
     <script src="js/listing.js"></script>
 </body>
 </html>

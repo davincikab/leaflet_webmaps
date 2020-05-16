@@ -1,6 +1,8 @@
 html{
     --brand-color:hsl(240, 43%, 49%);
+    --blue-75:hsla(240, 43%, 49%, 0.924);
     --gray-90:hsl(240, 1%, 21%);
+    --box-shadow:hsl(0, 0%, 87%);
     --text-color:hsl(240,12% 12%);
     --white:hsl(0, 0%, 87%);
 }
@@ -12,16 +14,24 @@ body{
     
 }
 
+/* Background Color classes */
+.bg-blue {
+    background-color: var(--blue-75);
+    color:var(--white);
+}
+
+/*  */
 #map{
     height:90vh;
     width:100%;
+    position: fixed;
 }
 
 /* Boostrap */
 .container-fluid{
-    padding: 0px !important;
-    overflow-x: hidden;
+    margin-top: 4em;
 }
+
 /* Navigation Bar */
 .navbar .navbar-brand{
     font-weight: 900;
@@ -37,11 +47,97 @@ body{
     font-weight:600;
 }
 .navbar{
-    box-shadow: 0px 2px 0.1em rgb(240, 231, 231);
+    box-shadow: 0px 2px 0.1em var(--box-shadow);
+}
+
+/*  LISTING */
+.listings{
+    margin-left: 15px;
+}
+
+.listings .col-md-12{
+    padding: 0;
+}
+
+.listing-title{
+    color:var(--blue-75);
+    font-size: 1.1em;
+}
+
+.description p{
+    font-size: 0.8em;
+}
+
+.description .facility{
+    justify-content:space-between;
+}
+
+.facility span{
+    color: var(--blue-75);
+}
+
+.products{
+    margin-top: 1em;
+    box-shadow: 2px 2px 0.1em var(--box-shadow);
+    border:1px solid #cccbcb;
+    border-radius: 2px;
+    height: 200px;
+}
+
+.rating .fa{
+    color: hsl(49, 92%, 49%);
+    font-size: 0.8em;
+    font-weight: 900;
+}
+
+/* Listing block view */
+.listings .col-md-6{
+    height: 400px;
+    padding: 0px;
+    margin-left: 0px;
+}
+
+.col-md-12 .listing-img, .col-md-12 .description{
+    width: 50%;
+}
+
+.col-md-6 .listing-img, .col-md-6 .description{
+    width: 100%;
+}
+
+.listings .col-md-6 .listing-img{
+    height: 50%;
+}
+/* Layput  */
+.layout .btn{
+    border-radius: 50%;
+    background-color: var(--white);
+    border:1px solid var(--blue-75);
+    color:var(--blue-75);
+    font-weight: bold;
+    padding:4px 8px;
+}
+
+.layout .btn:hover{
+    background-color: var(--blue-75);
+    color: var(--white);
 }
 
 
+/* Filter Section */
+.filters .btn-outline-blue{
+    border: 1px solid var(--brand-color);
+    color:var(--text-color);
+    font-weight: 500;
+    padding:4px;
+}
 
+
+/* Filter panels */
+.prices, .rating-filter, .room-filter{
+    box-shadow: 2px 2px 0.1em var(--box-shadow);
+    border:1px solid var(--box-shadow);
+}
 /* Zoom Control Custom style */
 .leaflet-touch .leaflet-bar .leaflet-control-zoom-in, .leaflet-touch .leaflet-bar .leaflet-control-zoom-out{
     width:25px;
