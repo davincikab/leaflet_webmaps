@@ -134,6 +134,27 @@ var ratingValue = document.getElementsByClassName('stars');
 
 for (const rating of ratingValue) {
     rating.onclick = function(e){
-       console.log(e); 
-    }
+        var value = this.getAttribute('data-rate');
+
+        for (let index = 1; index <= value; index++) {
+            const element = document.getElementById('rating-' + index);
+
+            element.classList.add('active');
+        }
+
+        if (value < 5) {
+            value = parseInt(value, 10) + 1;
+            console.log(value);
+
+            for (let index = value; index < 6; index++) {
+                const element = document.getElementById('rating-' + index);
+
+                element.classList.remove('active');
+            }
+        }
+    };
+};
+
+function updateRating(e){
+    
 }
