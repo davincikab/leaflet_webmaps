@@ -13,7 +13,7 @@ var layer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}
     minZoom: 0
 });
 
-// layer.addTo(myMap);
+layer.addTo(myMap);
 var customIcon = new L.icon({
     iconUrl:'images/pin4.png'
 });
@@ -156,5 +156,26 @@ for (const rating of ratingValue) {
 };
 
 function updateRating(e){
+    
+}
+
+var menuToggle = document.getElementById('menu');
+var setting = document.getElementById('setting');
+menuToggle.addEventListener('click', function(e){
+    toggleSetting();
+});
+
+function toggleSetting(){
+    console.log('OPen');
+    setting.classList.toggle('open');
+}
+
+var themes = document.getElementsByClassName('theme');
+
+function changeTheme(){ 
+
+}
+
+function changeOrientation(){
     
 }

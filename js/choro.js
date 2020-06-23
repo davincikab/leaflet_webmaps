@@ -29,10 +29,10 @@ var colorSchemes = {
 var geoData = "./data/gunDeath.geojson";
 
 fetch(geoData)
-    .then(response=>{
+    .then(response =>{
         return response.json();
     })
-    .then(data=>{
+    .then(data =>{
         console.log(data);
         createChoropleth(data);
     });

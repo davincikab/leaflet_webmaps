@@ -51,6 +51,22 @@ body{
     box-shadow: 0px 2px 0.1em var(--box-shadow);
 }
 
+.navbar-nav .setting{
+    border:1px solid var(--box-shadow);
+    box-shadow: 4px 5px 0.1em var(--box-shadow); 
+    display: none;
+    position: absolute;
+    top:20%;
+    right:4%;
+    z-index:1200;
+    width:14vw;
+    background-color: var(--white);
+}
+
+.navbar-nav .open{
+   display: block;
+}
+
 /*  LISTING */
 .listings{
     margin-left: 15px;
@@ -83,6 +99,10 @@ body{
     border:1px solid #cccbcb;
     border-radius: 2px;
     height: 200px;
+}
+
+.products:hover{
+    box-shadow: 5px 5px 0.1em var(--box-shadow);
 }
 
 .rating .fa{

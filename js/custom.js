@@ -119,6 +119,7 @@ function createList(counties, element){
     });
 
 
+    element.innerHTML = '';
     element.appendChild(docFragement);
     listEventLister();
 

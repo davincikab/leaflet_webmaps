@@ -14,3 +14,5 @@ var layer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}'
 });
 
 layer.addTo(myMap);
+
+// search: Geocoder

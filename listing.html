@@ -43,10 +43,27 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>  
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <ul class="navbar-nav">
+                <span id="menu">
+                    <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+                </span>
+
+                <div class="setting pb-2" id="setting">
+                    <h6 class="bg-light pl-2" >Theme</h6>
+                    <div class="theme px-2">
+                       <button class="btn bg-dark mx-1 my-2 theme" id="">Dark</button>
+                       <button class="btn bg-light mx-1 my-2 theme" id="">Light</button>
+                       <button class="btn bg-accent mx-1 my-2 theme" id="">Accent</button>
+                       <button class="btn bg-blue mx-1 my-2 theme" id="">Ocean</button>
+                    </div>
+
+                    <h6 class="bg-light mt-2 pl-2">Orientation</h6>
+                    <div class="screen-orient px-2">
+                        <button class="btn">RTL</button>
+                        <button class="btn">LTR</button>
+                    </div>
+                </div>
+            </ul>
         </div>
     </nav>
 
